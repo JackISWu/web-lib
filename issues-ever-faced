@@ -11,3 +11,25 @@ fixed by writting a new settings.xml file.
 # Steps: 
 1. create a new web project using Eclipse
 2. right click -> configure -> Convert to Maven project
+
+
+#ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
+You need to add the "Maven Dependency" in the Deployment Assembly
+right click on your project and choose properties.
+click on Deployment Assembly.
+click add
+click on "Java Build Path Entries"
+select Maven Dependencies"
+click Finish.
+Rebuild and deploy again
+Note: This is also applicable for non maven project.
+
+#The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path [duplicate]
+right click on your project and choose properties.
+click on Project Facets.
+Select Java, JavaScript, Dynamic web module
+Runtimes -> select tomcat
+click apply -> OK
+
+This error indicates that http-servlet is not available in the project class path, once we add target-runtime to the project
+, http-servlet will be available in the project class-path.
